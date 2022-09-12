@@ -23,4 +23,8 @@ public class AuthorService {
         List<BookArtist> bookArtistList = bookArtistsRepository.findAuthorIdByBookId(bookId);
         return authorRepository.findAllById(bookArtistList.stream().map(c -> c.getArtistsId()).distinct().collect(Collectors.toList()));
     }
+
+    public long count() {
+      return  authorRepository.count();
+    }
 }

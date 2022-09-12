@@ -70,26 +70,6 @@ public class BookRestController {
         return bookRepository.count();
     }
 
-    @QueryMapping
-    public Iterable<Author> findAllAuthors() {
-        return authorRepository.findAuthors();
-    }
-
-    @QueryMapping
-    public long countAuthors() {
-        return authorRepository.count();
-    }
-
-    @QueryMapping
-    public List<Author> findAuthorByBookId(@Argument Long bookId) {
-        return authorService.getAuthorByBookId(bookId);
-    }
-
-    @SchemaMapping
-    public List<Author> authorList(Book book) {
-        return authorService.getAuthorByBookId(book.getId());
-    }
-
     @MutationMapping
     public Book updateBookPageCount(@Argument Integer pageCount, @Argument Long id) {
         Optional<Book> opt = bookRepository.findById(id);
@@ -100,13 +80,6 @@ public class BookRestController {
             return book;
         }
         throw new BookNotFoundException("The book to be updated was not found", id);
-    }
-
-    @MutationMapping
-    public Author newAuthor(@Argument String firstName,
-                            @Argument String lastName,
-                            @Argument Long id) {
-        return authorRepository.save(new Author(firstName, lastName, id));
     }
 
     @MutationMapping
