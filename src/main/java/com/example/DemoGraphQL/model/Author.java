@@ -1,17 +1,19 @@
 package com.example.DemoGraphQL.model;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 public class Author {
     @Id
-    @Column(name="author_id", nullable = false)
+    @Column(name = "author_id", nullable = false)
     private Long id;
 
-    @Column(name="author_first_name", nullable = false)
+    @Column(name = "author_first_name", nullable = false)
     private String firstName;
 
-    @Column(name="author_last_name", nullable = false)
+    @Column(name = "author_last_name", nullable = false)
     private String lastName;
 
 
@@ -25,7 +27,7 @@ public class Author {
     public Author(String firstName, String lastName, Long id) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.id=id;
+        this.id = id;
     }
 
     public Long getId() {

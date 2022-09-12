@@ -34,9 +34,6 @@ public class DemoGraphQlApplicationTests {
 
     @Autowired
     DataSource dataSource;
-
-    static class Config {}
-
     @Autowired
     private TestRestTemplate restTemplate;
 
@@ -61,12 +58,15 @@ public class DemoGraphQlApplicationTests {
     public void h2Version() {
         String actualVersion = jdbcTemplate.queryForObject("SELECT `VALUE` FROM INFORMATION_SCHEMA.SETTINGS WHERE NAME = 'CREATE_BUILD'", String.class);
         String expectedVersion = properties.getH2()
-                                           .getVersion();
+                .getVersion();
         assertThat(expectedVersion).endsWith("." + actualVersion); // the db must be created with the same h2 version in our build
     }
 
     @Test
     public void artifactProperty() throws IOException {
         assertThat(properties.getArtifactId()).isEqualTo("DemoGraphQL");
+    }
+
+    static class Config {
     }
 }

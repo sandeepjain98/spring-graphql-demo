@@ -6,8 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 
 import java.util.Collection;
 
-public interface AuthorRepository extends JpaRepository<Author, Long>
-{
+public interface AuthorRepository extends JpaRepository<Author, Long> {
     @Query(
             value = "SELECT * FROM AUTHOR AUTHOR",
             nativeQuery = true)

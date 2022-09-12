@@ -1,30 +1,25 @@
 package com.example.DemoGraphQL.model;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Transient;
 import java.util.List;
 
 @Entity
 public class Book {
     @Id
-    @Column(name="book_id", nullable = false)
+    @Column(name = "book_id", nullable = false)
     private Long id;
 
-    @Column(name="book_title", nullable = false)
+    @Column(name = "book_title", nullable = false)
     private String title;
 
-    @Column(name="book_isbn", nullable = false)
+    @Column(name = "book_isbn", nullable = false)
     private String isbn;
 
-    @Column(name="book_pageCount", nullable = false)
+    @Column(name = "book_pageCount", nullable = false)
     private int pageCount;
-
-    public List<Author> getAuthorList() {
-        return authorList;
-    }
-
-    public void setAuthorList(List<Author> authorList) {
-        this.authorList = authorList;
-    }
     @Transient
     private List<Author> authorList;
 
@@ -35,7 +30,15 @@ public class Book {
         this.title = title;
         this.isbn = isbn;
         this.pageCount = pageCount;
-        this.id=id;
+        this.id = id;
+    }
+
+    public List<Author> getAuthorList() {
+        return authorList;
+    }
+
+    public void setAuthorList(List<Author> authorList) {
+        this.authorList = authorList;
     }
 
     public Long getId() {
@@ -71,7 +74,6 @@ public class Book {
     }
 
 
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -81,6 +83,7 @@ public class Book {
 
         return id.equals(book.id);
     }
+
     @Override
     public int hashCode() {
         return id.hashCode();

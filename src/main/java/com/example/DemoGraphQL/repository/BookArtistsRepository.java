@@ -10,8 +10,8 @@ import java.util.List;
 public interface BookArtistsRepository extends JpaRepository<BookArtist, Long> {
 
     @Query(
-            value = "SELECT * FROM BOOK_ARTIST BOOK_ARTIST where BOOK_ARTIST.BOOK_ID = :bookId" ,
+            value = "SELECT * FROM BOOK_ARTIST BOOK_ARTIST where BOOK_ARTIST.BOOK_ID = :bookId",
             nativeQuery = true)
     List<BookArtist> findAuthorIdByBookId(
-     @Param("bookId") Long bookId);
+            @Param("bookId") Long bookId);
 }

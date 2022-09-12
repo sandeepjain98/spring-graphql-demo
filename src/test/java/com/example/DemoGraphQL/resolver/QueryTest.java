@@ -11,8 +11,7 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(webEnvironment = RANDOM_PORT)
 @EnableAutoConfiguration
-class QueryTest
-{
+class QueryTest {
     @Test
     public void test() {
 

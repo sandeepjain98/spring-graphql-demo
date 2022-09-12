@@ -7,7 +7,7 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 @SpringBootApplication
 public class DemoGraphQlApplication extends SpringBootServletInitializer {
 
-	public static void main(String[] args) {
-		SpringApplication.run(DemoGraphQlApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(DemoGraphQlApplication.class, args);
+    }
 }
