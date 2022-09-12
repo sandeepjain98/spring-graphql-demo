@@ -73,7 +73,16 @@ public class Book {
         this.pageCount = pageCount;
     }
 
+    public Price getPrice() {
+        return price;
+    }
 
+    public void setPrice(Price price) {
+        this.price = price;
+    }
+
+    @Transient
+    private Price price;
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

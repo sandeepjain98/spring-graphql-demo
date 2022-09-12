@@ -3,7 +3,8 @@ type Book {
     title: String!
     isbn: String!
     pageCount: Int
-    authorList: [Author]
+    authorList: [Author],
+    price: Price
 }
 
 

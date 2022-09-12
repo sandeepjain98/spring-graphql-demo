@@ -23,8 +23,6 @@ public class AuthorController {
         this.authorService = authorService;
         this.authorRepository=authorRepository;
     }
-
-
     @QueryMapping
     public Iterable<Author> findAllAuthors() {
         return authorRepository.findAuthors();
