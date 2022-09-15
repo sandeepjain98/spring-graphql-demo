@@ -1,0 +1,39 @@
+type InventorySupply
+{
+    id : String
+    GTIN : String
+    nodeCode : String
+    salesOrganizationCode : String
+    supplyProtectionReferenceHeaderNumber : String
+    supplyProtectionItemReferenceNumber : String
+    availabilityTypeCode : String
+    productCode : String
+    sizeCode : String
+    inventorySegmentationCode : String
+    inventoryQualityCode : String
+    inventoryTypeCode : String
+    availabilityDate : String
+    availableQuantity : String
+    availableQuantityUnitofMeasure : String
+    openToReferenceQuantity : String
+    salesUnitofMeasure : String
+    customerRequestedDeliveryDt : String
+    modify_ts : String
+    soldToIdentifier : String
+    eventDate : String
+    availSegmentationHierarchyName : String
+    availSegmentationHierarchyCode : String
+    availSegmentationHierarchyTypeName : String
+    seller : String
+    is_dirty_node : String
+    dirty_node_expiry_dt : String
+    event_sequence_id : String
+    event_sequence_timestamp : String
+    eventSequenceId : String
+}
+
+
+extend type Query {
+    findInventorySupply( GTIN : String, inventoryTypeCode : String ,anchor: Int, count : Int
+    ): [InventorySupply]
+}
